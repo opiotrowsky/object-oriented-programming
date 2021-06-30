@@ -5,7 +5,7 @@ class Fruit : public Cargo {
 
   size_t useTime_;
 
-  Fruit &operator--(size_t useTime);
+  Fruit &operator--(size_t price);
 
   auto getPrice();
-}
+};
