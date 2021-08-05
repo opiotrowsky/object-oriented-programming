@@ -2,14 +2,14 @@
 #include "cargo.hpp"
 
 enum class Rarity {
-  common,
-  rare,
-  epic,
-  legendary,
+  common = 100,
+  rare = 125,
+  epic = 150,
+  legendary = 200,
 };
 
 class Item : public Cargo {
-Rarity rarity_{Rarity::common};
+  Rarity rarity_{Rarity::common};
 
 public:
   Item(std::string &name, size_t amount, size_t basePrice, Rarity rarity);
@@ -17,11 +17,6 @@ public:
   size_t getPrice() const override;
   std::string getName() const override;
   size_t getAmount() const override;
- size_t getBasePrice() const override;
-  //Cargo &operator+=(size_t amount);
- //Cargo &operator-=(size_t amount);
-//bool operator==(Cargo &cargo) const override;
-
-  // Metoda getPrice() powinna być adekwatnie wyliczana od poziomu rzadkości
-  // przedmiotu.
+  size_t getBasePrice() const override;
+  bool operator==(Cargo &cargo) const override;
 };
