@@ -18,7 +18,5 @@ size_t Fruit::getPrice() const {
   return (basePrice_ * (daysToExpiry_ - daysLeftToExpiry_) / daysLeftToExpiry_);
 }
 
-std::string Fruit::getName() const { return name_; }
-size_t Fruit::getAmount() const { return amount_; }
 size_t Fruit::getBasePrice() const { return basePrice_; }
 size_t Fruit::nextDay() { return daysLeftToExpiry_--; }

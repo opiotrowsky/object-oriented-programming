@@ -15,8 +15,6 @@ public:
   Item(std::string &name, size_t amount, size_t basePrice, Rarity rarity);
 
   size_t getPrice() const override;
-  std::string getName() const override;
-  size_t getAmount() const override;
   size_t getBasePrice() const override;
   bool operator==(Cargo &cargo) const override;
 };

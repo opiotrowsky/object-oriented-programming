@@ -7,8 +7,6 @@ size_t Item::getPrice() const {
   return static_cast<size_t>(
       ((static_cast<double>(basePrice_) * static_cast<double>(rarity_)) / 100));
 }
-std::string Item::getName() const { return name_; }
-size_t Item::getAmount() const { return amount_; }
 size_t Item::getBasePrice() const { return basePrice_; }
 
 bool Item::operator==(Cargo &cargo) const {}
