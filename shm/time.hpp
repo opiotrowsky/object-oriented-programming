@@ -4,12 +4,14 @@
 class Time {
 private:
     size_t dayNr_;
+    size_t daysLimit_;
 
 public:
     Time();
-    Time(size_t dayNr);
+    Time(size_t dayNr, size_t daysLimit);
 
     size_t getDayNr() const { return dayNr_; }
+    size_t getDaysLimit() const { return daysLimit_; }
 
     size_t endCurrentDay(size_t dayNr);
 };
