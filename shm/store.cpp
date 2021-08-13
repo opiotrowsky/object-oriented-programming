@@ -2,9 +2,7 @@
 
 //check if present in store
 bool Store::checkAvaiablityCargoInStore(std::shared_ptr<Cargo> searchCargo) {
-    auto result = find(cargosInStore.begin(), cargosInStore.end(), [&searchCargo](const Cargo& cargo) {
-        return cargo.getName() == searchCargo->getName();
-    });
+    auto result = find(cargosInStore.begin(), cargosInStore.end(),searchCargo);
     if (result != cargosInStore.end()) {
         return true;
     }

@@ -4,8 +4,8 @@
 #include "cargo.hpp"
 #include "ship.hpp"
 
-Player::Player(std::shared_ptr<Ship> ship, size_t money)
-    : ship_(ship), money_(money) {}
+// Player::Player(std::shared_ptr<Ship> ship, size_t money)
+//     : ship_(ship), money_(money) {}
 
 
 size_t Player::getMoney() const {
