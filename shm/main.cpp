@@ -5,7 +5,11 @@ constexpr size_t game_days = 100;
 constexpr size_t final_goal = 2'000;
 
 int main() {
-    Game game(start_money, game_days, final_goal);
+    
+    Ship ship;
+    Time gameDays;
+    Game game(ship, gameDays, final_goal);
+
     game.startGame();
 
     return 0;
