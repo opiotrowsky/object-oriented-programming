@@ -15,14 +15,15 @@
 class Game {
     Ship startMoney_;
     Time gameDays_;
+    map newMap_;
     size_t finalGoal_;
-    bool gameOver = false;
+    bool gameOver = false; 
 
 public:
     Game();
-    Game(Ship startMoney, Time gameDays, size_t finalGoal)
-        : startMoney_(startMoney), gameDays_(gameDays_), finalGoal_(finalGoal) {}
+    Game(Ship startMoney, Time gameDays, size_t finalGoal);
 
     //void startGame(Ship startMoney, Time gameDays, size_t finalGoal);
     void startGame();
+    map retrunMap() const {return newMap_;}
 };
