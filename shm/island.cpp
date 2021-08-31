@@ -4,7 +4,7 @@ Island::Island(const Coordinates& position)
         : position_(position)
     {}
 
-std::string Island::setName(std::string name_) {
+std::string Island::getName(std::string name_) {
     std::vector<std::string> firstHalf {"Green", "Sea", "Rock", "Sand", "Mount", "Sky", "Gold", "Blue", "Sun", "Moon"};
     std::vector<std::string> secondHalf {"berg", "land", "le", "gard", "bor", "haven", "shore", "side", " Lagoon", " Bay"};
     std::random_device rd;

@@ -13,5 +13,7 @@ public:
     size_t getDayNr() const { return dayNr_; }
     size_t getDaysLimit() const { return daysLimit_; }
 
+    size_t setDaysLimit(size_t daysLimit) { return daysLimit_ = daysLimit; }
+
     size_t endCurrentDay(size_t dayNr);
 };

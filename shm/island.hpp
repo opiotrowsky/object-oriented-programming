@@ -9,7 +9,7 @@ class Island {
 public:
     explicit Island(const Coordinates&);
     Coordinates getPosition() const { return position_; }
-    std::string setName(std::string name_);
+    std::string getName(std::string name_);
 
 private:
     Coordinates position_;

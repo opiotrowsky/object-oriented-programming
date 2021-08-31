@@ -16,6 +16,7 @@ public:
     Ship(int maxCrew, int speed, size_t id, std::vector<std::shared_ptr<Cargo>> cargo);
 
     void setName(const std::string& name) { name_ = name; }
+    size_t setCoins(size_t coins) { return coins_ = coins; }
     Ship& operator-=(size_t num);
     Ship& operator+=(size_t num);
     size_t getCapacity() const { return capacity_; }
@@ -28,6 +29,7 @@ public:
     std::vector<std::shared_ptr<Cargo>> getCargo() const { return cargo_; }
     void addAmounntToShipCargo( std::shared_ptr<Cargo>, size_t );
     void dellAmounntFromShipCargo( std::shared_ptr<Cargo>, size_t );
+    size_t getCoins() const { return coins_; }
 private:
     size_t capacity_;
     size_t maxCrew_;

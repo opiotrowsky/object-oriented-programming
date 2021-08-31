@@ -1,26 +1,37 @@
 #include "game.hpp"
 
 Game::Game(Ship startMoney, Time gameDays, size_t finalGoal)
-    : startMoney_(startMoney), gameDays_(gameDays_), finalGoal_(finalGoal) {}
+    : startMoney_(startMoney), gameDays_(gameDays), finalGoal_(finalGoal) {}
 
 void Game::startGame() {
     int keySignal;
     while (gameOver != true) {
-        std::cout << "Sklep – 0, tawerna – 1, wyswietl mapy - 2, zakoncz dzien – 3.\n";  //żeby podróżować po wyświetleniu mapy?
+        std::cout << "Sklep [0], tawerna [1], wyswietl mape [2], zakoncz dzien [3].\n";
         std::cin >> keySignal;
         if (keySignal == 0) {
-            std::cout << "Kupuj – 0, sprzedawaj – 1, wyjdz ze sklepu – 2.\n";
+            std::cout << "Kupuj [0], sprzedawaj [1], wyjdz ze sklepu [2].\n";
             std::cin >> keySignal;
         }
         if (keySignal == 1) {
-            std::cout << "Rekrutuj – 0, wyrzuc z zalogi – 1, wyjdz z tawerny – 2.\n";
+            std::cout << "Rekrutuj [0], wyrzuc z zalogi [1], wyjdz z tawerny [2].\n";
             std::cin >> keySignal;
         }
         if (keySignal == 2) {
             retrunMap().printIslands();
+            std::cout << "Wybierz cel podrozy [0-9] lub cofnij [10]\n";
+            std::cin >> keySignal;
+            // if(keySignal >= 0 and keySignal <= 9) {
+
+            // }
+            if(keySignal == 10) {
+                continue;
+            }
+        }
+        if (keySignal == 3) {
+            gameDays_.endCurrentDay(gameDays_.getDayNr());
         }
         if (gameDays_.getDayNr() == gameDays_.getDaysLimit()) {
-            std::cout << "Koniec gry !\n";
+            std::cout << "Koniec gry!\n";
             gameOver = true;
         }
     }
