@@ -18,6 +18,7 @@ class Game {
     map newMap_;
     size_t finalGoal_;
     bool gameOver = false; 
+    Store spawn;
 
 public:
     Game();
