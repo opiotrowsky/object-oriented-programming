@@ -6,8 +6,11 @@ Game::Game(Ship startMoney, Time gameDays, size_t finalGoal)
 void Game::startGame() {
     int keySignal;
     while (gameOver != true) {
-        std::cout << "Sklep [0], tawerna [1], wyswietl mape [2], zakoncz dzien [3].\n";
+        std::cout << "Sklep [0], tawerna [1], wyswietl mape [2], zakoncz dzien [3], zakoncz GRĘ [-1]\n";
         std::cin >> keySignal;
+        if(keySignal == -1) {
+            gameOver = true;
+        }
         if (keySignal == 0) {
             std::cout << "Kupuj [0], sprzedawaj [1], wyjdz ze sklepu [2].\n";
             std::cin >> keySignal;

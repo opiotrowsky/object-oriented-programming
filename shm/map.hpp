@@ -11,6 +11,6 @@ public:
 
 private:
     std::vector<std::pair<int, int>> generateIslandPosition() const;
-    std::vector<std::shared_ptr<Island>> map_{};
+    std::vector<std::shared_ptr<Island>> map_{}; //tutaj przechowamy wszsytkie wyspy 
     Island* currentPosition_ = nullptr;
 };

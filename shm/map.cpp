@@ -13,13 +13,21 @@ map::map() {
     for (int i = 0; i < MAX_ISLANDS; ++i) {
         map_.push_back(std::make_shared<Island>(Coordinates(returnPaired[i].first, returnPaired[i].second)));
     }
+    std::vector<std::string> NameOfIsland {"Green", "Sea", "Rock", "Sand", "Mount", "Sky", "Gold", "Blue", "Sun", "Moon"};
+
+    for(int i =0; i < NameOfIsland.size();++i) {
+        map_.at(i)->setName(NameOfIsland[i]);
+    }
+
 }
 
 void map::printIslands() const {
     for (auto& a : map_) {
-        std::cout << a.get()->getPosition().getPositionX() << ' ' << a.get()->getPosition().getPositionY() << '\n';
+        std::cout << a.get()->getName() << ": ";
+        std::cout << "["<< a.get()->getPosition().getPositionX() << ' ' << a.get()->getPosition().getPositionY() << "]" <<'\n';
     }
 }
+
 
 std::vector<std::pair<int, int>> map::generateIslandPosition() const {
     std::map<int, int> vecOfPairs{};
